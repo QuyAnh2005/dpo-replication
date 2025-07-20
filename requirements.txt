@@ -1,0 +1,13 @@
+torch>=2.1.0
+transformers>=4.36.0
+datasets>=2.15.0
+trl>=0.7.0
+peft>=0.6.0
+accelerate
+wandb
+hydra-core
+numpy
+tqdm
+beautifulsoup4
+scikit-learn
+vllm>=0.3.0
