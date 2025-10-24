@@ -249,6 +249,38 @@ The project generates comprehensive results including:
 
 All results are visualized in `nbs/Visualization.ipynb`.
 
+## Model Checkpoints & Training Logs
+
+### Training Logs
+
+The complete training process on the Anthropic-HH dataset is logged in detail at:  
+**[https://wandb.ai/quyanh/dpo-replication](https://wandb.ai/quyanh/dpo-replication)**
+
+The logs include comprehensive metrics such as:
+- Training and validation loss
+- Learning rate schedules
+- Gradient norms
+- Win-rate progression across training steps
+- Hardware utilization metrics
+
+### Model Checkpoints
+
+All model versions throughout the training process are publicly available on Hugging Face:
+
+- **SFT Model**: [quyanh/pythia-2.8b-sft](https://huggingface.co/quyanh/pythia-2.8b-sft/commits/main)
+- **DPO Model**: [quyanh/pythia-2.8b-dpo](https://huggingface.co/quyanh/pythia-2.8b-dpo/commits/main)
+- **DPO Model (Summarization)**: [quyanh/openai_summarize_tldr_sft-dpo](https://huggingface.co/quyanh/openai_summarize_tldr_sft-dpo/commits/main)
+
+Each checkpoint includes:
+- Training step information
+- Loss values at that checkpoint
+- Hyperparameters used during training
+- Model weights and configuration files
+
+Researchers can directly use these checkpoints or continue training from any intermediate point.
+
+> **Note on Summarization Dataset**: Evaluation on the Summarization dataset encountered challenges due to incompatibilities between the original paper's models/libraries and current frameworks. Additionally, the official paper repository does not publicly share code for this part of the evaluation.
+
 ## Troubleshooting
 
 ### Common Issues
