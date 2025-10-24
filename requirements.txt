@@ -1,0 +1,13 @@
+torch
+transformers
+trl
+peft
+accelerate
+wandb
+hydra-core
+numpy
+tqdm
+beautifulsoup4
+scikit-learn
+vllm
+openai

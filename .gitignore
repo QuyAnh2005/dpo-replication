@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore all inference results
+inference_baselines/
+inference_dpo_training/
+eval_baselines/
+eval_dpo_training/

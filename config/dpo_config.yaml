@@ -1,0 +1,55 @@
+# Modern DPO Configuration
+exp_name: "modern-dpo-experiment"
+
+# Model configuration
+model:
+  model_name_or_path: "microsoft/DialoGPT-medium"
+  model_revision: "main"
+  torch_dtype: "float16"
+  use_lora: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+
+# Data configuration
+data:
+  dataset_names: ["hh"]
+  max_length: 512
+  max_prompt_length: 256
+  cache_dir: null
+
+# Training configuration
+training:
+  output_dir: "./results"
+  num_train_epochs: 1
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 8
+  gradient_accumulation_steps: 1
+  learning_rate: 5.0e-7
+  weight_decay: 0.01
+  warmup_steps: 100
+  logging_steps: 10
+  eval_steps: 500
+  save_steps: 500
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  report_to: ["wandb"]
+  run_name: null
+  seed: 42
+  dataloader_num_workers: 4
+  remove_unused_columns: false
+  
+  # DPO specific parameters
+  beta: 0.1
+  label_smoothing: 0.0
+  loss_type: "sigmoid"
+  reference_free: false
+
+# Wandb configuration
+wandb:
+  enabled: true
+  entity: null
+  project: "modern-dpo"
