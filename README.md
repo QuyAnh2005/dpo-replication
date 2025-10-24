@@ -48,6 +48,7 @@ cat > .env << EOL
 OPENAI_API_KEY=your_openai_api_key_here
 HF_TOKEN=your_huggingface_token_here
 WANDB_API_KEY=your_wandb_api_key_here
+WANDB_PROJECT=your_project_name
 EOL
 
 # Load environment variables

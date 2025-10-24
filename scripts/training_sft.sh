@@ -8,7 +8,12 @@ if [ -f .env ]; then
     export $(cat .env | grep -v '^#' | xargs)
 fi
 
-# Login to Hugging Face and W&B using environment variables
+# Set environment variables
+export CUDA_VISIBLE_DEVICES=0
+export WANDB_PROJECT=$WANDB_PROJECT
+export HF_TOKEN=$HF_TOKEN
+
+# Login to Hugging Face and Weights & Biases using environment variables
 huggingface-cli login --token=$HF_TOKEN
 wandb login $WANDB_API_KEY
 
